@@ -68,7 +68,7 @@ def report_errors(errors):
 
 
 def main():
-    action = Path(sys.argv[0]).name.removeprefix("✓ ").removeprefix("✕ ")
+    action = Path(sys.argv[0]).name.removeprefix("✅ ").removeprefix("❌ ")
     if action not in ("Mark as Done", "Remove Done Mark"):
         return report_errors(["Run Mark as Done or Remove Done Mark from the Nautilus Scripts menu."])
 

@@ -8,7 +8,7 @@ Run `./install.sh` from this directory as your regular user. It installs into yo
 
 ## Use
 
-Select one or more files and right-click. Choose **Scripts → ✓ Mark as Done** or **Scripts → ✕ Remove Done Mark**. If a badge is slow to update, reload the folder with **Ctrl+R**.
+Select one or more files and right-click. Choose **Scripts → ✅ Mark as Done** or **Scripts → ❌ Remove Done Mark**. If a badge is slow to update, reload the folder with **Ctrl+R**.
 
 The badge is stored in GNOME file metadata and leaves the file’s contents, icon, and other badges intact. The mark is local to your user account.
 

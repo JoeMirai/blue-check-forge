@@ -14,7 +14,7 @@ is_blue_check_script() {
 # Check the runtime before adding the menu entries.
 /usr/bin/python3 -c 'from gi.repository import Gio'
 
-for name in '✓ Mark as Done' '✕ Remove Done Mark'; do
+for name in '✅ Mark as Done' '❌ Remove Done Mark'; do
     script="$scripts_dir/$name"
     if [ -L "$script" ] || { [ -e "$script" ] && ! is_blue_check_script "$script"; }; then
         printf 'A different script already uses this name: %s\n' "$script" >&2
@@ -31,15 +31,15 @@ elif command -v gtk-update-icon-cache >/dev/null 2>&1; then
     gtk-update-icon-cache --force --ignore-theme-index --quiet "$icon_theme"
 fi
 
-for name in '✓ Mark as Done' '✕ Remove Done Mark'; do
+for name in '✅ Mark as Done' '❌ Remove Done Mark'; do
     install -m 755 "$project_dir/blue-check-forge.py" "$scripts_dir/$name"
 done
 
-for name in 'Mark as Done' 'Remove Done Mark'; do
+for name in 'Mark as Done' 'Remove Done Mark' '✓ Mark as Done' '✕ Remove Done Mark'; do
     script="$scripts_dir/$name"
     if [ ! -L "$script" ] && is_blue_check_script "$script"; then
         rm -- "$script"
     fi
 done
 
-printf '%s\n' 'Installed ✓ Mark as Done and ✕ Remove Done Mark in GNOME Files.'
+printf '%s\n' 'Installed ✅ Mark as Done and ❌ Remove Done Mark in GNOME Files.'
